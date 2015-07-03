@@ -1,6 +1,6 @@
 #React Thumb Preview
 
-**WORK IN PROGRESS. ALPHA. NOT READY FOR DISTRIBUTION.**
+[![npm package](https://img.shields.io/npm/v/thumb-preview.svg?style=flat)](https://www.npmjs.org/package/thumb-preview)
 
 A React component that provides a thumbnail preview effect controlled by
 mousemove events.

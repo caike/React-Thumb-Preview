@@ -19915,11 +19915,18 @@ module.exports = require('./lib/React');
 },{"./lib/React":30}],158:[function(require,module,exports){
 "use strict";
 
-var React = require("react");
-var ThumbPreview = require("./dist/thumb-preview");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _distThumbPreview = require("./dist/thumb-preview");
+
+var _distThumbPreview2 = _interopRequireDefault(_distThumbPreview);
 
 var images = ["images/bon-jovi.png", "images/foo.png", "images/metallica.jpg", "images/nofx.png", "images/trivium.jpg"];
 
-React.render(React.createElement(ThumbPreview, { images: images }), document.getElementById("thumb-react"));
+_react2["default"].render(_react2["default"].createElement(_distThumbPreview2["default"], { images: images }), document.getElementById("thumb-react"));
 
 },{"./dist/thumb-preview":1,"react":157}]},{},[158]);
