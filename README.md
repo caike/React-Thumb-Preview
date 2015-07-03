@@ -1,48 +1,32 @@
-#jQuery Thumb Preview
+#React Thumb Preview
 
-This is a jQuery plugin that provides a thumbnail preview effect controlled by mousemove events.
+**WORK IN PROGRESS. ALPHA. NOT READY FOR DISTRIBUTION.**
 
-![](https://raw.githubusercontent.com/caike/jQuery-Thumb-Preview/master/docs/preview.gif)
+A React component that provides a thumbnail preview effect controlled by
+mousemove events.
 
-##Installation
+This is a port from the [jQuery-Thumb-Preview](https://github.com/caike/jQuery-Thumb-Preview) plugin
 
-### Manual
-
-Download [jquery.thumb.preview.js](https://raw.github.com/caike/jQuery-Thumb-Preview/master/jquery.thumb.preview.js).
-
-If you are using Rails and the Asset Pipeline, copy the [jquery.thumb.preview.js](https://raw.github.com/caike/jQuery-Thumb-Preview/master/jquery.thumb.preview.js) file to the **vendor/assets/javascript** directory and reference it from your JavaScript Manifest file, typically found under **app/assets/javascripts/application.js**
+##Usage
 
 ```javascript
-//= require jquery.thumb.preview
+var images =  ["/path/to/image_1.jpg",
+  "/path/to/image_2.jpg", "/path/to/image_3.jpg"]
+
+React.render(<ReactThumb images={images} />, targetElement);
 ```
-
-### Bower
-
-You can install it using bower:
-
-`bower install jquery-thumb-preview`
-
 
 ##Examples
 
-To activate the plugin just call the `.thumbPreview()` function on the image element:
+Check `index.html` for a comparison between the original jQuery plugin
+and this component.
 
-```javascript
-$('.list img').thumbPreview();
-```
+I've run some benchmarks in Chrome 43.0.2357.130 (64-bit)
+and Firefox 38.0.5 and here's the results:
 
-The plugin will look for thumbnails on the `data-images` data attribute of that element.
+### Chrome
+![](benchmarks/jquery.png)
+![](benchmarks/react.png)
 
-```
-<img src="/path/to/default_image.jpg"
-  data-images='["/path/to/thumb_1.jpg", "/path/to/thumb_2.jpg", "/path/to/thumb_3.jpg"]' />
-```
-
-##Configuration
-
-If you want to preload all images, use the `{preload: true}` option, like so:
-
-```javascript
-$('.list img').thumbPreview({preload: true});
-```
-
+### Firefox
+![](benchmarks/firefox.png)
