@@ -1,6 +1,6 @@
 {
-  "name": "react-thumb-preview",
-  "version": "0.0.1",
+  "name": "thumb-preview",
+  "version": "1.0.0",
   "description": "Provides a thumbnail preview effect controlled by mousemove events.",
   "main": "dist/thumb-preview.js",
   "directories": {
@@ -18,7 +18,8 @@
     "react",
     "thumbnail",
     "photos",
-    "preview"
+    "preview",
+    "react-component"
   ],
   "author": "Carlos Souza <carloshrsouza@gmail.com> (http://csouza.me/)",
   "license": "ISC",
