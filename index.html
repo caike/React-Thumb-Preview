@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>React Thumb Example</title>
+    <title>React Thumb Preview Example</title>
   </head>
   <body>
     <h2>Using React</h2>
@@ -22,59 +22,10 @@
     <script src="jquery-2.1.4.min.js" charset="utf-8"></script>
     <script src="jquery.thumb.preview.js" charset="utf-8"></script>
 
-    <script src="node_modules/react/dist/react.js" charset="utf-8"></script>
-    <script src="node_modules/react/dist/JSXTransformer.js" charset="utf-8"></script>
+    <!-- Includes all files needed to run in browsers -->
+    <script src="dist/demo-bundle.js" charset="utf-8"></script>
 
-    <script type="text/jsx">
-      var ReactThumb = React.createClass({
-
-        getInitialState: function(){
-          return {
-            imgSrc: this.props.images[0]
-          }
-        },
-
-        render: function(){
-          return <img src={this.state.imgSrc} onMouseMove={this.mouseMoveHandler}/>;
-        },
-
-
-        mouseMoveHandler: function(e){
-          var target = e.target;
-          var allImages = this.props.images;
-          var sectionWidth = parseInt(target.width, 10) / allImages.length;
-          var positionX = e.clientX - e.target.getBoundingClientRect().left;
-
-          this._changeImage(target, allImages, positionX, sectionWidth);
-        },
-
-        _changeImage: function(img, allImages, positionX, sectionWidth){
-          var imagesCount = allImages.length;
-          var setDefault = true;
-
-          for(var i=imagesCount-1; i>0; i--){
-            if(positionX > (sectionWidth*i)){
-              this._updateSrc(allImages[i]);
-              setDefault = false;
-              break;
-            }
-          }
-
-          if(setDefault){
-            this._updateSrc(allImages[0]);
-          }
-        },
-
-        _updateSrc: function(imagePath){
-          this.setState({ imgSrc: imagePath });
-        }
-      });
-
-      var images = ["images/bon-jovi.png", "images/foo.png",
-        "images/metallica.jpg","images/nofx.png", "images/trivium.jpg"];
-
-      React.render(<ReactThumb images={images} />, document.getElementById("thumb-react"));
-
+    <script>
       $(function(){
         $("#thumb-jquery").thumbPreview();
       });
