@@ -1,11 +1,11 @@
-#React Thumb Preview
+# React Thumb Preview
 
 [![npm package](https://img.shields.io/npm/v/thumb-preview.svg?style=flat)](https://www.npmjs.org/package/thumb-preview)
 
 A React component that provides a thumbnail preview effect controlled by
 mousemove events.
 
-##Usage
+## Usage
 
 Install it via **npm**:
 
@@ -25,7 +25,7 @@ React.render(<ThumbPreview images={images} />, targetElement);
 
 This is a port from the [jQuery-Thumb-Preview](https://github.com/caike/jQuery-Thumb-Preview) plugin
 
-##Examples
+## Examples
 
 Check `index.html` for a comparison between the [original jQuery plugin](https://github.com/caike/jQuery-Thumb-Preview)
 and this component.
